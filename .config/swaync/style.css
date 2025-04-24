@@ -1,0 +1,27 @@
+.notification {
+    font-family: "WenQuanYi Zen Hei Regular";
+    font-size: 14px;
+    border: 2px solid #ff1c42;
+    border-radius: 0px;
+    margin: 6px;
+    box-shadow: none;
+    background-color: rgb(0, 0, 0);
+    color: #ff1c42;
+}
+
+/* Center text using container alignment */
+.notification-content {
+    padding: 6px;
+}
+
+.summary {
+    font-weight: bold;
+    font-size: 15px;
+    color: #ffffff;
+    text-shadow: none;
+}
+
+.body {
+    font-size: 13px;
+    color: #e0e0e0;
+}

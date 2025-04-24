@@ -1,0 +1,282 @@
+/* Custom Afof theme greengay*/
+
+@define-color background #000000;
+@define-color background-light #3c3836;
+@define-color foreground #00869b;
+@define-color white #ffffff;
+@define-color blue #00869b;
+@define-color alert #f50538;
+@define-color active #ff1c42;
+@define-color 1 #edff4b;
+@define-color 2 #b1fd5e;
+@define-color 3 #75fa70;
+@define-color 4 #50e786;
+@define-color 5 #2ad49b;
+@define-color 6 #2ad49b;
+@define-color 7 #50e786;
+@define-color 8 #75fa70;
+@define-color 9 #b1fd5e;
+@define-color 10 #edff4b;
+
+/* Custom Afof theme bluenongay*/
+
+@define-color background #000000;
+@define-color background-light #3c3836;
+@define-color foreground #00869b;
+@define-color white #ffffff;
+@define-color blue #00869b;
+@define-color alert #f50538;
+@define-color warning #edff4b;
+@define-color active #ff1c42;
+@define-color 1 #ffffff;
+@define-color 2 #00869b;
+@define-color 3 #00869b;
+@define-color 4 #00869b;
+@define-color 5 #00869b;
+@define-color 6 #00869b;
+@define-color 7 #00869b;
+@define-color 8 #00869b;
+@define-color 9 #00869b;
+@define-color 10 #00869b;
+
+@define-color workspaces-color @white;
+@define-color workspaces-active-bg @active;
+@define-color workspaces-active-fg @active;
+@define-color workspaces-urgent-bg @alert;
+@define-color workspaces-urgent-fg @alert;
+
+@define-color mode-color @blue;
+@define-color mpd-color @blue;
+@define-color weather-color @5;
+@define-color playerctl-color @1;
+@define-color clock-color @1;
+@define-color cpu-color @3;
+@define-color memory-color @2;
+@define-color temperature-color @4;
+@define-color temperature-critical-color @alert;
+@define-color battery-color @10;
+@define-color battery-charging-color @10;
+@define-color battery-warning-color @;
+@define-color battery-critical-color @alert;
+@define-color network-color @9;
+@define-color network-disconnected-color @alert;
+@define-color pulseaudio-color @7;
+@define-color pulseaudio-muted-color @7;
+@define-color backlight-color @6;
+@define-color uptime-color @2;
+@define-color updates-color @2;
+@define-color quote-color @white;
+@define-color idle-inhibitor-color @foreground;
+@define-color idle-inhibitor-active-color @alert;
+@define-color bluetooth-color @8;
+@define-color bluetooth-disabled-color @8;
+
+* {
+    /* Base styling for all modules */
+    border: none;
+    border-radius: 0;
+    font-family: "Iosevka Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+    border-bottom: 0px solid @blue
+}
+
+
+
+/* Common module styling with border-bottom */
+#mode, #mpd, #custom-weather, #custom-playerctl, #clock, #cpu,
+#memory, #temperature, #battery, #network, #pulseaudio,
+#backlight, #disk, #bluetooth, #custom-uptime, #custom-updates, #custom-quote,
+#idle_inhibitor, #tray {
+    padding: 0 10px;
+    margin: 0 2px;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+}
+
+/* Workspaces styling */
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: @workspaces-color;
+    margin: 0;
+}
+
+#workspaces button:hover {
+    background: @background-light;
+    box-shadow: inherit;
+}
+
+#workspaces button.active {
+    box-shadow: inset 0 -2px @workspaces-active-fg;
+    color: @workspaces-active-fg;
+    font-weight: 900;
+}
+
+#workspaces button.urgent {
+    background-color: @workspaces-urgent-bg;
+    color: @workspaces-urgent-fg;
+}
+
+/* Module-specific styling */
+#mode {
+    color: @mode-color;
+    border-bottom-color: @mode-color;
+}
+
+#mpd {
+    color: @mpd-color;
+    border-bottom-color: @mpd-color;
+}
+
+#mpd.disconnected,
+#mpd.sbottomped {
+    color: @foreground;
+    border-bottom-color: transparent;
+}
+
+#custom-weather {
+    color: @weather-color;
+    border-bottom-color: @weather-color;
+}
+
+#custom-playerctl {
+    color: @playerctl-color;
+    border-bottom-color: @playerctl-color;
+}
+
+#custom-playerctl.Playing {
+    color: @cyan;
+    border-bottom-color: @cyan;
+}
+
+#custom-playerctl.Paused {
+    color: @orange;
+    border-bottom-color: @orange;
+}
+
+#clock {
+    color: @clock-color;
+    border-bottom-color: @clock-color;
+}
+
+#cpu {
+    color: @cpu-color;
+    border-bottom-color: @cpu-color;
+}
+
+#memory {
+    color: @memory-color;
+    border-bottom-color: @memory-color;
+}
+
+#temperature {
+    color: @temperature-color;
+    border-bottom-color: @temperature-color;
+}
+
+#temperature.critical {
+    color: @temperature-critical-color;
+    border-bottom-color: @temperature-critical-color;
+}
+
+#battery {
+    color: @battery-color;
+    border-bottom-color: @battery-color;
+}
+
+#battery.charging, #battery.plugged {
+    color: @battery-charging-color;
+    border-bottom-color: @battery-charging-color;
+}
+
+#battery.warning:not(.charging) {
+    color: @battery-warning-color;
+    border-bottom-color: @battery-warning-color;
+}
+
+#battery.critical:not(.charging) {
+    color: @battery-critical-color;
+    border-bottom-color: @battery-critical-color;
+}
+
+#network {
+    color: @network-color;
+    border-bottom-color: @network-color;
+}
+
+#network.disconnected {
+    color: @network-disconnected-color;
+    border-bottom-color: @network-disconnected-color;
+}
+
+#pulseaudio {
+    color: @pulseaudio-color;
+    border-bottom-color: @pulseaudio-color;
+}
+
+#pulseaudio.muted {
+    color: @pulseaudio-muted-color;
+    border-bottom-color: @pulseaudio-muted-color;
+}
+
+#backlight {
+    color: @backlight-color;
+    border-bottom-color: @backlight-color;
+}
+
+#bluetooth {
+    color: @bluetooth-color;
+    border-bottom-color: @bluetooth-color;
+}
+
+#bluetooth.disabled {
+    color: @bluetooth-disabled-color;
+    border-bottom-color: @bluetooth-disabled-color;
+}
+
+#custom-uptime {
+    color: @uptime-color;
+    border-bottom-color: @uptime-color;
+}
+
+#custom-updates {
+    color: @updates-color;
+    border-bottom-color: @updates-color;
+}
+
+#custom-quote {
+    color: @quote-color;
+    border-bottom-color: @quote-color;
+}
+
+#idle_inhibitor {
+    color: @idle-inhibitor-color;
+    border-bottom-color: transparent;
+}
+
+#idle_inhibitor.activated {
+    color: @idle-inhibitor-active-color;
+    border-bottom-color: @idle-inhibitor-active-color;
+}
+
+#tray {
+    background-color: transparent;
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @red;
+    border-bottom-color: @red;
+}
