@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=mpv
+Exec=mpv %F
+Terminal=false
+Type=Application
+Categories=Video;Player;AudioVideo;
+MimeType=video/mkv;video/mp4;video/mov;audio/mpeg;application/ogg;
